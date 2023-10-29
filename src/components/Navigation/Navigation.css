@@ -1,0 +1,89 @@
+.navigation {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh
+}
+
+.navigation__container {
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 520px;
+  min-height: 100vh;
+  background-color: #202020;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
+
+
+.navigation__close-button {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background-image: url(../../images/close-button.svg);
+  background-size: contain;
+  background-color: transparent;
+  border: 0;
+  height: 22px;
+  width: 22px;
+}
+
+.navigation__lists {
+  position: relative;
+  max-width: 340px;
+  margin-top: 159px;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation__list {
+  padding: 0 0 0 64px;
+  margin-bottom: 28px;
+}
+
+.navigation__list:last-child {
+  padding: 0;
+  margin: 0 0 611px 0;
+}
+
+.navigation__link {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.navigation__profile {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 12px;
+}
+
+.navigation__profileButton {
+  margin: 0 0 0 7px;
+  }
+
+
+@media screen and (max-width: 520px) {
+  .navigation__lists {
+    margin-top: 140px;
+  }
+  .navigation__list:last-child {
+    margin-bottom: 430px;
+  }
+}

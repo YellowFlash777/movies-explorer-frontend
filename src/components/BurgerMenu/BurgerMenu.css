@@ -1,0 +1,39 @@
+.burgerMenu {
+  width: 44px;
+  height: 44px;
+  border: none;
+  margin: 15px 30px 0 0;
+  background-color: transparent;
+  background-image: url("../../images/burger-icon.svg");
+  cursor: pointer;
+  padding: 0;
+  display: none;
+}
+
+.burgerButton:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .burgerMenu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .burgerMenu {
+    background-size: contain;
+    margin: 17px 14px 0 0;
+    width: 40px;
+    height: 43px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .burgerButton {
+    margin: 0 14px 0 0;
+  }
+
+}

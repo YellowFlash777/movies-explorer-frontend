@@ -1,0 +1,139 @@
+
+.profile {
+  background: #202020;
+}
+
+.profile__title {
+  margin: 0 auto;
+  max-width: 204px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.profile__container {
+  display: flex;
+  flex-direction: column;
+  max-width: 410px;
+  margin: 0 auto;
+  row-gap: 12px;
+}
+
+
+.profile__container-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid #424242;
+  padding-bottom: 12px;
+}
+
+.profile__container-wrapper_border {
+  border: none;
+}
+
+.profile__text-label {
+  margin: 123px 343px 2px 0;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.profile__text-label-last {
+  margin: 0 284px 198px 0;
+}
+
+.profile__text-input {
+  font-size: 11px;
+  color: white;
+  background-color: #202020;
+  border: 0;
+  padding: 0;
+}
+
+
+.profile__text-input::placeholder {
+  color: #FFF;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.profile__button-edit {
+  margin-bottom: 3px;
+  color: white;
+  border: 0;
+  background-color: #202020;
+  padding: 0;
+  font-size: 13px;
+  line-height: normal;
+}
+
+.profile__link-exit {
+  text-align: center;
+  text-decoration: none;
+  color: #EE3465;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 70px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .profile {
+    padding-top: 157px;
+  }
+  .profile__container-wrapper {
+    padding-bottom: 14px;
+  }
+  .profile__text-label {
+    margin: 96px 343px 2px 0;
+  }
+  .profile__text-label-last {
+    margin: 0 284px 185px 0;
+  }
+  .profile__text-input {
+    width: 97px;
+  }
+  .profile__link-exit {
+    margin-bottom: 269px;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .profile {
+    padding-top: 0;
+  }
+  .profile__container {
+  max-width: 283px;
+  margin: 0 auto;
+  }
+  .profile__container-wrapper {
+    padding-bottom: 14px;
+  }
+  .profile__text-label {
+    margin: 68px 90px 2px 0;
+  }
+  .profile__text-input_first {
+    padding-left: 102px;
+    width: 65px
+  }
+  .profile__text-label-first {
+    margin-right: 90px;
+  }
+  .profile__text-label-last {
+    margin: 0 133px 352px 0;
+  }
+  .profile__text-input {
+    display: flex;
+  }
+  .profile__button-edit {
+    font-size: 12px
+  }
+  .profile__link-exit {
+    font-size: 12px;
+    margin-bottom: 269px;
+  }
+}
