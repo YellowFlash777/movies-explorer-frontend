@@ -9,7 +9,7 @@ export default function PageNotFound() {
         <h1 className="not-found__title">404</h1>
         <p className="not-found__subtitle">Страница не найдена</p>
         <button
-          className="not-found__button hover__button"
+          className="not-found__button hover-button"
           type="button"
           onClick={() => navigate(-1)}
         >

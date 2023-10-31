@@ -35,10 +35,10 @@ export default function SavedMovies() {
               maxLength="40"
             />
           </div>
-          <button type="submit" className="profile__button-edit hover__button">
+          <button type="submit" className="profile__button-edit hover-button">
             Редактировать
           </button>
-          <Link to="/" className="profile__link-exit hover__button">
+          <Link to="/" className="profile__link-exit hover-button">
             Выйти из аккаунта
           </Link>
         </div>

@@ -4,6 +4,7 @@
 }
 
 .profile__title {
+  padding-top: 11px;
   margin: 0 auto;
   max-width: 204px;
   font-size: 24px;
@@ -82,7 +83,7 @@
 
 @media screen and (max-width: 768px) {
   .profile {
-    padding-top: 157px;
+    padding-top: 150px;
   }
   .profile__container-wrapper {
     padding-bottom: 14px;
@@ -103,15 +104,20 @@
 
 
 @media screen and (max-width: 600px) {
+
   .profile {
     padding-top: 0;
   }
+  .profile__title {
+    padding: 0;
+    margin: 0 auto 10px;
+  }
   .profile__container {
-  max-width: 283px;
+  max-width: 259px;
   margin: 0 auto;
   }
   .profile__container-wrapper {
-    padding-bottom: 14px;
+    padding-bottom: 18px;
   }
   .profile__text-label {
     margin: 68px 90px 2px 0;

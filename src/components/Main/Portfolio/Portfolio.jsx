@@ -12,7 +12,7 @@ export default function Portfolio() {
             <Link
               to={"https://github.com/YellowFlash777/how-to-learn"}
               target="_blank"
-              className="portfolio__link hover__link"
+              className="portfolio__link hover-link"
             >
               <p className="portfolio__text">Статичный сайт</p>
               <button type="button" className="portfolio__button"></button>
@@ -22,7 +22,7 @@ export default function Portfolio() {
             <Link
               to={"https://github.com/YellowFlash777/russian-travel"}
               target="_blank"
-              className="portfolio__link hover__link"
+              className="portfolio__link hover-link"
             >
               <p className="portfolio__text">Адаптивный сайт</p>
               <button type="button" className="portfolio__button"></button>
@@ -32,7 +32,7 @@ export default function Portfolio() {
             <Link
               to={"https://github.com/YellowFlash777/react-mesto-auth"}
               target="_blank"
-              className="portfolio__link hover__link"
+              className="portfolio__link hover-link"
             >
               <p className="portfolio__text">Одностраничное приложение</p>
               <button type="button" className="portfolio__button"></button>

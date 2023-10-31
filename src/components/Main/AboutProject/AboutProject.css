@@ -42,7 +42,7 @@
 
 .about-project__table {
   max-width: 1140px;
-  margin: 0 auto 0 70px;
+  margin: 0 70px 0 70px;
   display: grid;
   grid-template-columns: 228px auto;
   grid-template-rows: repeat(2, auto);
@@ -101,7 +101,7 @@
   }
   .about-project__table {
     max-width: 668px;
-    margin: 0 auto 0 51px;
+    margin: 0 50px 0 50px;
     grid-template-columns: 137px auto;
   }
   .about-project__table-subtitle {
@@ -117,7 +117,7 @@
   }
   .about-project__title {
     padding: 70px 0 28px 0;
-    margin: 0 0 61px 18px;
+    margin: 0 18px 61px;
     font-size: 18px;
     letter-spacing: -0.72px;
   }
@@ -135,8 +135,8 @@
     margin: 0 0 37px 0;
   }
   .about-project__table {
+    max-width: 564px;
     grid-row-gap: 9px;
-    max-width: 286px;
     margin: 0 18px 0 18px;
     grid-template-columns: 100px auto;
   }

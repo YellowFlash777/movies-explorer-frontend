@@ -4,7 +4,7 @@ import image from "../../../images/aboutMe.png";
 export default function AboutMe() {
   return (
     <section className="about-me">
-      <h2 className="main__title about-me__title">Студент</h2>
+      <h2 className="main-title about-me__title">Студент</h2>
       <div className="about-me__wrapper">
         <div className="about-me__info">
           <h3 className="about-me__paragraph">Виталий</h3>
@@ -17,7 +17,7 @@ export default function AboutMe() {
             заниматься фриланс-заказами и ушёл с постоянной работы.
           </p>
           <Link
-            className="about-me__link hover__link"
+            className="about-me__link hover-link"
             to={"https://github.com/YellowFlash777"}
             target="_blank"
           >

@@ -5,9 +5,8 @@
   background: #073042;
 }
 .header_theme_dark {
-  display: flex;
-  justify-content: space-between;
   background: #202020;
+  padding-bottom: 83px;
 }
 
 .header__link {
@@ -22,7 +21,7 @@
   margin-right: 16px;
 }
 
-.header__movies_navigation {
+.header__navigation_movies {
   padding-left: 60px;
   margin-top: 28px;
 }
@@ -43,7 +42,7 @@
   line-height: 12px
 }
 
-.header__account-image_dark {
+.header__account-image-dark {
   background-image: url(../../images/account-icon.svg);
   background-repeat: no-repeat;
   background-color: #313131;
@@ -59,19 +58,19 @@
 
 
 
-.hover__link:hover {
+.hover-link:hover {
   opacity: 0.7;
   transition: opacity 0.3s;
   cursor: pointer;
 }
 
-.hover__button:hover {
+.hover-button:hover {
   opacity: 0.8;
   transition: opacity 0.3s;
   cursor: pointer;
 }
 
-.header__wrapper {
+.header-wrapper {
   padding-bottom: 94px;
 }
 
@@ -116,13 +115,16 @@
   .header__logo {
     margin: 18px 0 0 30px;
   }
+  .header_theme_dark {
+    padding-bottom: 93px;
+  }
   .header__navigation {
     margin-right: 16px;
   }
   .header__signin {
     margin: 21px 14px 0 0;
   }
-  .header__movies_navigation {
+  .header__navigation_movies {
     display: none;
   }
   .header__account-wrapper {
@@ -141,20 +143,20 @@
   }
   .header__signin {
     margin: 24px 14px 0 0;
-    width: 54px;
-    height: 26px;
+    width: 40px;
+    height: 11px;
     font-size: 10px;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .header__wrapper {
+  .header-wrapper {
     padding-bottom: 88px;
   }
   .header__navigation {
     margin: 1px 0 0 0;
   }
   .header_theme_dark {
-    padding-bottom: 97px;
+    padding-bottom: 85px;
   }
 }

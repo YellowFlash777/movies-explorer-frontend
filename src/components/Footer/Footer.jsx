@@ -13,7 +13,7 @@ export default function Footer() {
           <li className="footer__list">
             <Link
               to={"https://practicum.yandex.ru/"}
-              className="footer__navigation-link hover__link"
+              className="footer__navigation-link hover-link"
               target="_blank"
             >
               Яндекс.Практикум
@@ -22,7 +22,7 @@ export default function Footer() {
           <li className="footer__list">
             <Link
               to={"https://github.com/"}
-              className="footer__navigation-link hover__link"
+              className="footer__navigation-link hover-link"
               target="_blank"
             >
               Github

@@ -4,13 +4,13 @@ import BurgerMenu from "../BurgerMenu/BurgerMenu";
 export default function Header() {
   const { pathname } = useLocation();
   return pathname === "/" ? (
-    <header className={"header header__wrapper"}>
-      <div className="header__logo hover__link"></div>
+    <header className={"header header-wrapper"}>
+      <div className="header__logo hover-link"></div>
       <nav className="header__navigation">
-        <Link to={"/signup"} className="header__registration hover__link">
+        <Link to={"/signup"} className="header__registration hover-link">
           Регистрация
         </Link>
-        <Link to={"/signin"} className="header__signin hover__link">
+        <Link to={"/signin"} className="header__signin hover-link">
           Войти
         </Link>
       </nav>
@@ -18,30 +18,34 @@ export default function Header() {
   ) : (
     (pathname === "/movies",
     (
-      <header className={"header__wrapper header_theme_dark"}>
-        <div className="header__logo hover__link"></div>
-        <nav className="header__navigation header__movies_navigation">
+      <header className={"header header_theme_dark"}>
+        <Link to="/">
+          <div className="header__logo hover-link"></div>
+        </Link>
+        <nav className="header__navigation header__navigation_movies">
           <Link
             to={"/movies"}
-            className="header__movies header__link hover__link"
+            className="header__movies header__link hover-link"
           >
             Фильмы
           </Link>
           <Link
             to={"/saved-movies"}
-            className="header__saved-movies header__link hover__link"
+            className="header__saved-movies header__link hover-link"
           >
             Сохраненные фильмы
           </Link>
         </nav>
         <div className="header__account-wrapper">
-          <Link to="/profile" className="header__account hover__link">
+          <Link to="/profile" className="header__account hover-link">
             Аккаунт
           </Link>
-          <div className="header__account-image_dark"></div>
+          <div className="header__account-image-dark"></div>
         </div>
         <BurgerMenu />
       </header>
     ))
   );
 }
+
+

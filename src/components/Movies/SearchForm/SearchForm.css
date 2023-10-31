@@ -4,7 +4,7 @@
 
 .search__form-input-container {
   padding-bottom: 13px;
-  margin: 0 70px 25px;
+  margin: 0 70px 32px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #424242;
@@ -35,7 +35,10 @@
   display: flex;
 }
 
-.search__icon-tumbler {
+
+
+
+.search__icon-tumbler-active {
   cursor: pointer;
   margin-right: 14px;
   padding: 0;
@@ -45,6 +48,11 @@
   height: 20px;
   background-image: url(../../../images/smalltumb.svg);
 }
+
+.search__icon-tumbler-disabled {
+  background-image: url(../../../images/smalltumboff.svg);
+}
+
 
 .search__checkbox-caption {
   font-size: 13px;
@@ -66,10 +74,15 @@
 @media screen and (max-width:768px) {
 
   .search__checkbox-container {
+    margin: 0 0 126px 70px;
     flex-direction: row-reverse;
+    justify-content: end;
   }
   .search__icon-tumbler {
     margin-right: 30px;
+  }
+  .search__icon-tumbler-active {
+    margin-right: 31px;
   }
   .search__checkbox-caption {
     margin-right: 16px
@@ -82,7 +95,7 @@
 
 @media screen and (max-width:580px) {
   .search__checkbox-container {
-    margin: 0 auto 91px;
+   margin: 0 auto 91px 86px;
   }
   .search__icon-tumbler {
     margin: 0;
@@ -92,7 +105,8 @@
     font-size: 18px;
   }
   .search__form-input-container {
-    margin: 0 14px 37px;
+    margin: 0 14px 40px;
+    padding-bottom: 9px;
   }
   .search__checkbox-caption {
     font-size: 11px;

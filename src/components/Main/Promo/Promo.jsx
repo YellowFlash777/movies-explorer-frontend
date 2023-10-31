@@ -11,7 +11,7 @@ export default function Promo() {
         <p className="promo__text">
           Листайте ниже, чтобы узнать больше про этот проект и его создателя.
         </p>
-        <button className="promo__button hover__button" type="button">
+        <button className="promo__button hover-button" type="button">
           Узнать больше
         </button>
       </div>

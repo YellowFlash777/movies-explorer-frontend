@@ -4,41 +4,41 @@ import logo from "../../images/headerLogo.svg";
 
 export default function Register() {
   return (
-    <section className="register">
-      <Link to="/" className="register__logo-link">
-        <img src={logo} alt="логотип" className="register__logo hover__link" />
+    <section className="auth">
+      <Link to="/" className="auth__logo-link">
+        <img src={logo} alt="логотип" className="auth__logo hover-link" />
       </Link>
-      <h1 className="register__title">Добро пожаловать!</h1>
+      <h1 className="auth__title">Добро пожаловать!</h1>
 
-      <form className="register__form form">
-        <label className="auth__label register__label-name">Имя</label>
+      <form className="auth__form form">
+        <label className="auth__label auth__label-name">Имя</label>
         <input
           type="text"
           id="UserName"
           name="UserName"
-          className="auth__input register__input"
+          className="auth__input auth__input-register"
           placeholder="Виталий"
           required=""
           minLength="2"
           maxLength="40"
         />
-        <label className="auth__label register__label-email">E-mail</label>
+        <label className="auth__label auth__label-email">E-mail</label>
         <input
           type="email"
           id="email"
           name="email"
-          className="auth__input register__input"
+          className="auth__input auth__input-register"
           placeholder="pochta@yandex.ru"
           required=""
           minLength="2"
           maxLength="40"
         />
-        <label className="auth__label register__label-password">Пароль</label>
+        <label className="auth__label auth__label-password">Пароль</label>
         <input
           type="password"
           id="password"
           name="password"
-          className="auth__input register__input register__input_password"
+          className="auth__input auth__input-register auth__input-register_password"
           placeholder="••••••••••••••"
           required=""
           minLength="2"
@@ -46,14 +46,14 @@ export default function Register() {
         />
         <span className="auth__error"></span>
         <button
-          className="auth__submit register__button hover__button"
+          className="auth__submit auth__submit-register hover-button"
           type="submit"
         >
           Зарегистрироваться
         </button>
-        <p className="auth__subtitle register__subtitle">
+        <p className="auth__subtitle auth__subtitle-register">
           Уже зарегистрированы?{" "}
-          <Link to="/signin" className="auth__subtitle-link hover__link">
+          <Link to="/signin" className="auth__subtitle-link hover-link">
             Войти
           </Link>
         </p>
