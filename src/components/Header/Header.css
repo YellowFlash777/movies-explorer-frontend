@@ -1,0 +1,162 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: #073042;
+}
+.header_theme_dark {
+  background: #202020;
+  padding-bottom: 83px;
+}
+
+.header__link {
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+.header__movies {
+  margin-right: 16px;
+}
+
+.header__navigation_movies {
+  padding-left: 60px;
+  margin-top: 28px;
+}
+.header__saved-movies {
+
+}
+
+.header__account-wrapper {
+  display: flex;
+}
+
+.header__account {
+  text-decoration: none;
+  color: white;
+  margin: 30px 7px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 12px
+}
+
+.header__account-image-dark {
+  background-image: url(../../images/account-icon.svg);
+  background-repeat: no-repeat;
+  background-color: #313131;
+  background-position: center;
+  width: 10px;
+  height: 10px;
+  padding: 8px;
+  border-radius: 50px;
+  margin: 24px 73px 0 8px;
+}
+
+
+
+
+
+.hover-link:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.hover-button:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.header-wrapper {
+  padding-bottom: 94px;
+}
+
+.header__logo {
+  cursor: pointer;
+  margin: 18px 0 0 70px;
+  width: 38px;
+  height: 38px;
+  background-image: url(../../images/headerLogo.svg);
+}
+.header__navigation {
+  display: flex;
+  justify-content: flex-end;
+}
+.header__registration {
+  margin: 29px 30px 0 0;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.33;
+}
+.header__signin {
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  margin: 21px 70px 0 0;
+  border-radius: 3px;
+  background-color: #3DDC84;
+  color: #000;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.33;
+  cursor: pointer;
+  width: 61px;
+  height: 19px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .header__logo {
+    margin: 18px 0 0 30px;
+  }
+  .header_theme_dark {
+    padding-bottom: 93px;
+  }
+  .header__navigation {
+    margin-right: 16px;
+  }
+  .header__signin {
+    margin: 21px 14px 0 0;
+  }
+  .header__navigation_movies {
+    display: none;
+  }
+  .header__account-wrapper {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .header__logo {
+    margin: 18px 0 0 14px;
+  }
+  .header__registration {
+    margin: 30px 14px 0 0;
+    font-size: 10px;
+  }
+  .header__signin {
+    margin: 24px 14px 0 0;
+    width: 40px;
+    height: 11px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header-wrapper {
+    padding-bottom: 88px;
+  }
+  .header__navigation {
+    margin: 1px 0 0 0;
+  }
+  .header_theme_dark {
+    padding-bottom: 85px;
+  }
+}

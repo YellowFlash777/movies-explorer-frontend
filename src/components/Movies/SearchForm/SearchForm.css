@@ -1,0 +1,116 @@
+.search {
+  background: #202020;
+}
+
+.search__form-input-container {
+  padding-bottom: 13px;
+  margin: 0 70px 32px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #424242;
+}
+
+.search__form-input {
+  background-color: transparent;
+  border: 0;
+  color: #8B8B8B;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.search__form-button {
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  width: 80px;
+  height: 34px;
+  background-image: url(../../../images/search-find.svg);
+}
+
+.search__checkbox-container {
+  margin: 0 0 116px 70px;
+  display: flex;
+}
+
+
+
+
+.search__icon-tumbler-active {
+  cursor: pointer;
+  margin-right: 14px;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  width: 36px;
+  height: 20px;
+  background-image: url(../../../images/smalltumb.svg);
+}
+
+.search__icon-tumbler-disabled {
+  background-image: url(../../../images/smalltumboff.svg);
+}
+
+
+.search__checkbox-caption {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.38;
+}
+
+@media screen and (max-width:986px) {
+
+  .search__checkbox-container {
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+  .search__checkbox-caption {
+    margin-right: 13px;
+  }
+}
+@media screen and (max-width:768px) {
+
+  .search__checkbox-container {
+    margin: 0 0 126px 70px;
+    flex-direction: row-reverse;
+    justify-content: end;
+  }
+  .search__icon-tumbler {
+    margin-right: 30px;
+  }
+  .search__icon-tumbler-active {
+    margin-right: 31px;
+  }
+  .search__checkbox-caption {
+    margin-right: 16px
+  }
+
+  .search__form-input-container {
+    margin: 0 30px 30px;
+  }
+}
+
+@media screen and (max-width:580px) {
+  .search__checkbox-container {
+   margin: 0 auto 91px 86px;
+  }
+  .search__icon-tumbler {
+    margin: 0;
+  }
+  .search__form-input {
+    max-width: 172px;
+    font-size: 18px;
+  }
+  .search__form-input-container {
+    margin: 0 14px 40px;
+    padding-bottom: 9px;
+  }
+  .search__checkbox-caption {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.63;
+  }
+}
