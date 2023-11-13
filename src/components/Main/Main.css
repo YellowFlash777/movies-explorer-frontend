@@ -2,6 +2,18 @@
   background: #073042;
 }
 
+.main {
+  margin: 0 auto;
+  padding: 0;
+  color: white;
+  max-width: 1280px;
+  min-width: 320px;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
 .main-title {
   margin: 0 70px 70px 70px;
   border-bottom: 1px solid;

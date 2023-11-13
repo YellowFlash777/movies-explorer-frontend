@@ -4,9 +4,9 @@
 }
 
 .profile__title {
-  padding-top: 11px;
-  margin: 0 auto;
-  max-width: 204px;
+  text-align: center;
+  padding-top: 75px;
+  margin: 0 auto 123px;
   font-size: 24px;
   font-weight: 500;
   line-height: normal;
@@ -20,24 +20,28 @@
   row-gap: 12px;
 }
 
+.profile__container-form {
+  margin-bottom: 195px;
+}
 
 .profile__container-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   border-bottom: 1px solid #424242;
-  padding-bottom: 12px;
 }
 
 .profile__container-wrapper_border {
+  padding-top: 14px;
   border: none;
 }
 
-.profile__text-label {
-  margin: 123px 343px 2px 0;
+.profile__container-span {
+  margin: 0;
   font-size: 11px;
   font-weight: 500;
   line-height: normal;
+  white-space: nowrap;
 }
 
 .profile__text-label-last {
@@ -50,12 +54,24 @@
   background-color: #202020;
   border: 0;
   padding: 0;
+  margin-bottom: 16px;
+  width: 50%;
+  text-align: right;
+  box-sizing: border-box;
 }
 
 
 .profile__text-input::placeholder {
-  color: #FFF;
+  color: gray;
   font-size: 11px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.profile__error {
+  color: #EE3465;
+  font-size: 10px;
+  font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
@@ -70,6 +86,14 @@
   line-height: normal;
 }
 
+.profile__button-disabled {
+  width: 117px;
+  color: gray;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  opacity: 0.7;
+}
 .profile__link-exit {
   text-align: center;
   text-decoration: none;
@@ -81,12 +105,20 @@
 }
 
 
+
 @media screen and (max-width: 768px) {
   .profile {
     padding-top: 150px;
   }
+  .profile__title {
+    padding-top: 85px;
+    margin: 0 auto 98px;
+  }
+  .profile__container-form {
+    margin-bottom: 186px;
+  }
   .profile__container-wrapper {
-    padding-bottom: 14px;
+    padding-bottom: 0;
   }
   .profile__text-label {
     margin: 96px 343px 2px 0;
@@ -106,26 +138,27 @@
 @media screen and (max-width: 600px) {
 
   .profile {
-    padding-top: 0;
+    padding-top: 70px;
   }
   .profile__title {
     padding: 0;
-    margin: 0 auto 10px;
+    margin: 0 auto 80px;
+  }
+  .profile__container-form {
+    margin-bottom: 355px;
   }
   .profile__container {
-  max-width: 259px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0 30px;
   }
   .profile__container-wrapper {
-    padding-bottom: 18px;
+    padding-bottom: 0;
   }
+
   .profile__text-label {
     margin: 68px 90px 2px 0;
   }
-  .profile__text-input_first {
-    padding-left: 102px;
-    width: 65px
-  }
+
   .profile__text-label-first {
     margin-right: 90px;
   }

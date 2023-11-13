@@ -1,6 +1,7 @@
 .promo {
   display: flex;
   margin: 0 auto;
+  padding-top: 75px;
 }
 .promo__wrapper {
   display: flex;
@@ -93,16 +94,14 @@
     width: 210px;
     height: 206px;
   }
-}
-
-@media screen and (max-width: 320px) {
-  .promo__text {
-    margin: 22px auto 80px;
+  .promo {
+  padding-top: 70px;
   }
-  .promo__title {
-  margin: 46px auto 0;
+  .promo__text {
+    margin: 22px auto 77px;
   }
   .promo__button {
-  margin: 0 auto 32px;
+    margin: 0 auto 33px;
   }
 }
+

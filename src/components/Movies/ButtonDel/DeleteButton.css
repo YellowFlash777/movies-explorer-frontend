@@ -1,0 +1,19 @@
+.element__button-delete {
+    align-self: flex-start;
+    padding: 0;
+    margin-top: 14px;
+    width: 16px;
+    height: 16px;
+    border: none;
+    background-color: transparent;
+    background-image: url(../../../images/deletefilms.svg);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: opacity .3s linear;
+
+
+}
+
+
+
+
