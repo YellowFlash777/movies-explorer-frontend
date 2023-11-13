@@ -111,7 +111,7 @@ class MainApi {
   }
 }
 const mainApi = new MainApi({
-  baseUrl: "http://localhost:3000",
+  baseUrl: "api.diploma69.gamzat.nomoredomainsrocks.ru",
 });
 
 export default mainApi;
