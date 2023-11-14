@@ -27,20 +27,18 @@ export default function Profile({
     setIsValid,
   } = useFormValidation();
 
-  // Значения в инпутах
   useEffect(() => {
     setValues("name", currentUser.name);
     setValues("email", currentUser.email);
   }, [currentUser, setValues]);
 
-  // Кнопка для отправки данных
   function handleSubmit(evt) {
     evt.preventDefault();
     editUserData(value.name, value.email, resetForm);
     setIsValid(false);
   }
 
-// Проверка изменения данных в инпутах
+
   useEffect(() => {
     if (value.name !== currentUser.name || value.email !== currentUser.email) {
       setIsUserDataChanged(true);

@@ -82,7 +82,6 @@ import mainApi from "../../utils/MainApi";
     const isMovieLiked = savedMovies.some((movie) => movie.movieId === data.id);
 
     if (isMovieLiked) {
-      // Если фильм уже лайкнут, удаляем его
       const clickedMovie = savedMovies.find(
         (movie) => movie.movieId === data.id
       );
@@ -90,7 +89,6 @@ import mainApi from "../../utils/MainApi";
         handleMovieDelete(clickedMovie._id);
       }
     } else {
-      // Если фильм не лайкнут, добавляем лайк
       mainApi
         .addMovie(data, localStorage.jwt)
         .then((res) => {

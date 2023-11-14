@@ -111,7 +111,7 @@ class MainApi {
   }
 }
 const mainApi = new MainApi({
-  baseUrl: "api.diploma69.gamzat.nomoredomainsrocks.ru",
+  baseUrl: "https://api.diploma69.gamzat.nomoredomainsrocks.ru",
 });
 
 export default mainApi;
