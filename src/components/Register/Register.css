@@ -110,6 +110,13 @@
   margin-bottom: 10px;
 }
 
+
+.auth__button_disabled {
+  pointer-events: none;
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+}
+
 @media screen and (max-width: 768px) {
   .auth__logo {
     margin: 232px auto 38px 0;

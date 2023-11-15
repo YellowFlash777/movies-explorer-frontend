@@ -32,9 +32,12 @@
 }
 
 .promo__button {
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
-  width: 131px;
-  height: 36px;
+  width: 128px;
+  min-height: 26px;
+  padding-top: 9px;
   margin: 0 auto 75px 70px;
   color: white;
   font-size: 12px;
@@ -62,7 +65,7 @@
     .promo__text {
     max-width: 260px;
     text-align: center;
-    margin: 22px auto 90px;
+    margin: 22px auto 91px;
   }
   .promo__button {
     max-width: 260px;

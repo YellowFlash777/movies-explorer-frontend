@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./SearchForm.css";
 import useFormValidation from "../../../utils/validation";
 import { useLocation } from "react-router-dom";
@@ -84,6 +84,7 @@ export default function SearchForm({
             name="searchCheckbox"
             className="search__icon-tumbler"
             checked={isCheck}
+            disabled = {firstEntry}
             onChange={() => changeShort()}
           />
           <span className="search__checkbox-span"></span>

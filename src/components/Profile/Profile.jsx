@@ -14,6 +14,7 @@ export default function Profile({
   isEditProfile,
   setEditProfile,
 }) {
+  const [isVisibleSubmit, setIsVisibleSubmit] = useState(false);
   const [isUserDataChanged, setIsUserDataChanged] = useState(false);
   const currentUser = useContext(CurrentUserContext);
   const {
@@ -38,6 +39,16 @@ export default function Profile({
     setIsValid(false);
   }
 
+  function makeButtonInVisible(evt) {
+    evt.preventDefault();
+    setIsVisibleSubmit(false);
+  }
+
+  function makeButtonVisible(evt) {
+    evt.preventDefault();
+    setIsUserDataChanged(false);
+    setIsVisibleSubmit(true);
+  }
 
   useEffect(() => {
     if (value.name !== currentUser.name || value.email !== currentUser.email) {
@@ -62,22 +73,29 @@ export default function Profile({
             <label className="profile__container-wrapper">
               <span className="profile__container-span">Имя</span>
               <input
-                className= "profile__text-input profile__text-input_first"
+                className="profile__text-input profile__text-input_first"
                 name="name"
                 id="name"
                 type="text"
-                minLength="2"
+                minLength="3"
                 maxLength="30"
                 placeholder="Введите имя"
                 value={value.name || ""}
                 onChange={handleChange}
+                disabled={!isEditProfile}
               />
             </label>
-
+            <span className="auth__error auth__error-profile">
+              {errors.name}
+            </span>
             <label className="profile__container-wrapper profile__container-wrapper_border">
               <span className="profile__container-span">E-mail</span>
               <input
-                className={`profile__text-input ${isInputValue.name === undefined|| isInputValue.name ? '' : 'profile__info-text_invalid'}`}
+                className={`profile__text-input ${
+                  isInputValue.name === undefined || isInputValue.name
+                    ? ""
+                    : "profile__info-text_invalid"
+                }`}
                 name="email"
                 type="email"
                 id="email"
@@ -91,29 +109,56 @@ export default function Profile({
             </label>
             <span className="profile__error">{errors.email}</span>
           </form>
-          <button
-            type="submit"
-            className={`profile__button-edit hover-button ${isValid && isUserDataChanged ? '' : 'profile__button-disabled'}`}  disabled={!isValid || !isUserDataChanged}
-            onClick={handleSubmit}
-          >
-            Редактировать
-          </button>
-          <Link
-            to="/"
-            className="profile__link-exit hover-button"
-            onClick={logout}
-          >
-            Выйти из аккаунта
-          </Link>
+
+          {isVisibleSubmit ? (
+            <>
+              <button
+                type="submit"
+                className={`auth__submit hover-button ${
+                  isValid && isUserDataChanged ? "" : "auth__button_disabled"
+                }`}
+                disabled={!isValid || !isUserDataChanged}
+                onClick={(event) => {
+                  handleSubmit(event);
+                  makeButtonInVisible(event);
+                  setEditProfile(false);
+                }}
+              >
+                Сохранить
+              </button>
+
+              <Link
+                to="/"
+                className="profile__link-exit hover-button"
+                onClick={logout}
+              >
+                Выйти из аккаунта
+              </Link>
+            </>
+          ) : (
+            <>
+              <span className="profile__link-success ">{isSucess} </span>
+              <button
+                type="submit"
+                className={`profile__button-edit  hover-button `}
+                onClick={(evt) => {
+                  setEditProfile(true);
+                  makeButtonVisible(evt);
+                }}
+              >
+                Редактировать
+              </button>
+              <Link
+                to="/"
+                className="profile__link-exit hover-button"
+                onClick={logout}
+              >
+                Выйти из аккаунта
+              </Link>
+            </>
+          )}
         </div>
       </section>
     </>
   );
 }
-
-
-
-
-
-
-

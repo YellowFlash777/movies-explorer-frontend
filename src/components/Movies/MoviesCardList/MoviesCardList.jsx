@@ -18,14 +18,12 @@ import {
 
 export default function MoviesCardList({
   name,
-  data,
   movies,
   savedMovies,
   serverError,
   firstEntry,
   addMovie,
   delMovie,
-  allMovies,
   isLoading,
 }) {
   const { pathname } = useLocation();

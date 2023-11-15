@@ -4,17 +4,19 @@ import Movies from "../Movies/Movies";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
-import PageNotFound from "../PageNotFound/PageNotFound.jsx"
+import PageNotFound from "../PageNotFound/PageNotFound"
 import Profile from "../Profile/Profile";
+import mainApi from "../../utils/MainApi";
 import { useEffect, useState } from "react";
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
-import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import CurrentUserContext from "../../context/CurrentUserContext";
 import ErrorContext from "../../context/ErrorContext"
-import mainApi from "../../utils/MainApi";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+
 
  function App() {
   const navigate = useNavigate();
+  const userMessage = 2500;
   const [currentUser, setCurrentUser] = useState();
   const [loggedIn, setLoggedIn] = useState(false);
   const [isInfoTooltipSuccess, setInfoTooltipSuccess] = useState("");
@@ -63,6 +65,9 @@ import mainApi from "../../utils/MainApi";
         console.log("Имя изменено");
       });
     }
+    setTimeout(() => {
+      setInfoTooltipSuccess('')
+    },  userMessage);
 
   function handleMovieDelete(deleteMovieId) {
 
@@ -115,6 +120,7 @@ import mainApi from "../../utils/MainApi";
         setInfoTooltipSuccess("Данный email уже зарегестрирован");
       })
       .finally(() => setIsSend(false));
+
     }
 
   function handleLogin(email, password) {
@@ -160,7 +166,7 @@ import mainApi from "../../utils/MainApi";
         <Routes>
 
           <Route path="/" element={<Main loggedIn={loggedIn} />} />
-
+          <Route path="*" element={<PageNotFound />} />
 
           <Route
             path="/movies"
@@ -175,8 +181,6 @@ import mainApi from "../../utils/MainApi";
               />
             }
           />
-
-
 
           <Route path="/signup"
           element={ loggedIn ? <Navigate to="/movies" replace />
@@ -202,9 +206,6 @@ import mainApi from "../../utils/MainApi";
               )
             }
           />
-          <Route path="*" element={<PageNotFound />} />
-
-
           <Route
             path="/saved-movies"
             element={
