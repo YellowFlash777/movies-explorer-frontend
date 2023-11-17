@@ -45,16 +45,6 @@ class MainApi {
     });
   }
 
-  checkUserToken(token) {
-    return this._request("/users/me", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
-  }
-
   setUserInfo(name, email, token) {
     return this._request("/users/me", {
       method: "PATCH",

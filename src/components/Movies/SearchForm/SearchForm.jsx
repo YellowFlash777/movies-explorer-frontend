@@ -77,7 +77,7 @@ export default function SearchForm({
           <button className="search__form-button hover-button" type="submit" />
         </div>
 
-        <div className="search__checkbox-container">
+        <label className="search__checkbox-container">
           <input
             type="checkbox"
             id="searchCheckbox"
@@ -89,8 +89,11 @@ export default function SearchForm({
           />
           <span className="search__checkbox-span"></span>
           <span className="search__checkbox-caption">Короткометражки</span>
-        </div>
+        </label>
       </form>
     </section>
   );
 }
+
+
+

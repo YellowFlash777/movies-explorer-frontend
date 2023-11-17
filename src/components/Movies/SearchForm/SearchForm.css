@@ -31,6 +31,7 @@
 }
 
 .search__checkbox-container {
+  align-self: flex-start;
   margin: 0 0 116px 70px;
   display: flex;
   position: relative;
@@ -61,8 +62,6 @@
 }
 
 .search__icon-tumbler {
-  height: 56px;
-  width: 51px;
   position: absolute;
   appearance: none;
 }
@@ -88,22 +87,13 @@
   line-height: 1.38;
 }
 
-@media screen and (max-width:986px) {
 
-  .search__checkbox-container {
-    flex-direction: row-reverse;
-    justify-content: center;
-  }
-  .search__checkbox-caption {
-    margin-right: 13px;
-  }
-}
 @media screen and (max-width:768px) {
 
   .search__checkbox-container {
     margin: 0 0 126px 70px;
+    align-self: flex-end;
     flex-direction: row-reverse;
-    justify-content: end;
   }
   .search__icon-tumbler {
     margin-right: 30px;

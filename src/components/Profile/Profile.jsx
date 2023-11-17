@@ -68,7 +68,6 @@ export default function Profile({
             className="profile__container-form"
             noValidate
             onSubmit={handleSubmit}
-            isValid={isValid}
           >
             <label className="profile__container-wrapper">
               <span className="profile__container-span">Имя</span>
@@ -80,6 +79,7 @@ export default function Profile({
                 minLength="3"
                 maxLength="30"
                 placeholder="Введите имя"
+                required={true}
                 value={value.name || ""}
                 onChange={handleChange}
                 disabled={!isEditProfile}

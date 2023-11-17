@@ -12,17 +12,18 @@ import CurrentUserContext from "../../context/CurrentUserContext";
 import ErrorContext from "../../context/ErrorContext"
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import Preloader from "../Preloader/Preloader";
 
 
  function App() {
   const navigate = useNavigate();
-  const userMessage = 2500;
   const [currentUser, setCurrentUser] = useState();
   const [loggedIn, setLoggedIn] = useState(false);
   const [isInfoTooltipSuccess, setInfoTooltipSuccess] = useState("");
   const [isError, setIsError] = useState(false);
   const [savedMovies, setSavedMovies] = useState([]);
   const [isEditProfile, setEditProfile] = useState(false);
+  const [isCheckToken, setIsCheckToken] = useState(true)
   const [isSend, setIsSend] = useState(false);
 
   useEffect(() => {
@@ -35,13 +36,16 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
           setSavedMovies(dataMovies.reverse());
           setCurrentUser(dataUser);
           setLoggedIn(true);
+          setIsCheckToken(false);
         })
         .catch((err) => {
           console.error(`Ошибка загрузки начальных данных ${err}`);
+          setIsCheckToken(false);
           localStorage.clear();
         });
     } else {
       setLoggedIn(false);
+      setIsCheckToken(false);
       localStorage.clear();
     }
   }, [loggedIn]);
@@ -65,9 +69,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
         console.log("Имя изменено");
       });
     }
-    setTimeout(() => {
-      setInfoTooltipSuccess('')
-    },  userMessage);
+
 
   function handleMovieDelete(deleteMovieId) {
 
@@ -138,17 +140,6 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
       .finally(() => setIsSend(false));
     }
 
-  useEffect(() => {
-    if (localStorage.jwt) {
-      mainApi.checkUserToken(localStorage.jwt)
-        .then(res => {
-          setLoggedIn(true);
-        })
-        .catch(err =>
-          console.log(`Ошибка авторизации при повторном входе ${err}`))
-    }
-  }, [navigate]);
-
 
   function logout() {
     localStorage.clear();
@@ -160,6 +151,8 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 
   return (
+    <div className="page">
+    {isCheckToken ? <Preloader /> :
     <CurrentUserContext.Provider value={currentUser}>
       <ErrorContext.Provider value={isError}>
 
@@ -237,7 +230,20 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
         </Routes>
       </ErrorContext.Provider>
     </CurrentUserContext.Provider>
-  );
-}
+ }
+  </div>
+  )
+};
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+

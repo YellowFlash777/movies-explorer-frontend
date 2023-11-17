@@ -45,11 +45,10 @@ export default function Movies({ loggedIn, name, savedMovies, setIsError, addMov
           setServerError(false);
           setFirstEntry(false);
           filter(search, isCheck, res);
-          console.log(moviesApi.getMovies());
         })
         .catch((err) => {
           setServerError(true);
-          console.error(`Ошибка при поске фильмов ${err}`);
+          console.error(`Ошибка при поиске фильмов ${err}`);
         })
         .finally(() => setIsLoading(false));
     } else {
