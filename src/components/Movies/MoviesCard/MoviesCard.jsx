@@ -1,173 +1,79 @@
 import "./MoviesCard.css";
-import cardOne from "../../../images/pic__COLOR_pic.png";
-import cardTwo from "../../../images/pic__COLOR_pic (1).png";
-import cardThree from "../../../images/pic__COLOR_pic (2).png";
-import cardFour from "../../../images/pic__COLOR_pic (3).png";
-export default function MoviesCard() {
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import LikeButton from "../ButtonLike/LikeButton";
+import DeleteButton from "../ButtonDel/DeleteButton";
+
+export default function MoviesCard({
+  name,
+  data,
+  savedMovies,
+  addMovie,
+  delMovie,
+}) {
+  const { pathname } = useLocation();
+  const [click, setClick] = useState(false);
+
+  useEffect(() => {
+    if (pathname === "/movies")
+      setClick(savedMovies.some((item) => data.id === item.movieId));
+  }, [savedMovies, data.id, setClick, pathname]);
+
+  function onAdd() {
+    if (savedMovies.some((item) => data.id === item.movieId)) {
+      setClick(true);
+      addMovie(data);
+    } else {
+      setClick(false);
+      addMovie(data);
+    }
+  }
+
+  function convertTime(duration) {
+    const minutes = duration % 60;
+    const hours = Math.floor(duration / 60);
+    return hours === 0
+      ? `${minutes}м`
+      : minutes === 0
+      ? `${hours}ч`
+      : `${hours}ч${minutes}м`;
+  }
+
   return (
-
-
-
-
-    <section className="movies-card">
-      <div className="movies-card__page">
-        <div className="movies-card__container">
+    <li className="movies-card">
+      <article>
+        <Link to={data.trailerLink} target="_blank">
           <img
-            src={cardOne}
-            alt="карточка фильма"
             className="movies-card__image"
+            src={
+              pathname === "/movies"
+                ? `https://api.nomoreparties.co${data.image.url}`
+                : data.image
+            }
+            alt={data.name}
           />
-          <div className="movies-card__wrapper">
-            <p className="movies-card__caption">33 слова о дизайне</p>
-            <button className="movies-card__button"></button>
-          </div>
-          <span className="movies-card__duration">1ч42м</span>
-        </div>
-
+        </Link>
         <div className="movies-card__container">
-          <img
-            src={cardTwo}
-            alt="карточка фильма"
-            className="movies-card__image"
-          />
           <div className="movies-card__wrapper">
-            <p className="movies-card__caption">33 слова о дизайне</p>
-            <button className="movies-card__button movies-card__button_active"></button>
+            <p className="movies-card__caption">{data.nameRU}</p>
+            <span className="movies-card__duration">
+              {convertTime(data.duration)}
+            </span>
           </div>
-          <span className="movies-card__duration">1ч42м</span>
+          {pathname === "/movies" ? (
+            <LikeButton
+              onClick={onAdd}
+              click={click}
+              savedMovies={savedMovies}
+            ></LikeButton>
+          ) : (
+            <DeleteButton delMovie={delMovie} data={data}></DeleteButton>
+          )}
         </div>
-
-        <div className="movies-card__container">
-          <img
-            src={cardThree}
-            alt="карточка фильма"
-            className="movies-card__image"
-          />
-          <div className="movies-card__wrapper">
-            <p className="movies-card__caption">33 слова о дизайне</p>
-            <button className="movies-card__button"></button>
-          </div>
-          <span className="movies-card__duration">1ч42м</span>
-        </div>
-
-        <div className="movies-card__container">
-          <img
-            src={cardFour}
-            alt="карточка фильма"
-            className="movies-card__image"
-          />
-          <div className="movies-card__wrapper">
-            <p className="movies-card__caption">33 слова о дизайне</p>
-            <button className="movies-card__button"></button>
-          </div>
-          <span className="movies-card__duration">1ч42м</span>
-        </div>
-
-        <div className="movies-card__container">
-          <img
-            src={cardOne}
-            alt="карточка фильма"
-            className="movies-card__image"
-          />
-          <div className="movies-card__wrapper">
-            <p className="movies-card__caption">33 слова о дизайне</p>
-            <button className="movies-card__button"></button>
-          </div>
-          <span className="movies-card__duration">1ч42м</span>
-        </div>
-
-        <div className="movies-card__container">
-          <img
-            src={cardTwo}
-            alt="карточка фильма"
-            className="movies-card__image"
-          />
-          <div className="movies-card__wrapper">
-            <p className="movies-card__caption">33 слова о дизайне</p>
-            <button className="movies-card__button movies-card__button_active"></button>
-          </div>
-          <span className="movies-card__duration">1ч42м</span>
-        </div>
-
-        <div className="movies-card__container">
-          <img
-            src={cardThree}
-            alt="карточка фильма"
-            className="movies-card__image"
-          />
-          <div className="movies-card__wrapper">
-            <p className="movies-card__caption">33 слова о дизайне</p>
-            <button className="movies-card__button"></button>
-          </div>
-          <span className="movies-card__duration">1ч42м</span>
-        </div>
-
-        <div className="movies-card__container">
-          <img
-            src={cardFour}
-            alt="карточка фильма"
-            className="movies-card__image"
-          />
-          <div className="movies-card__wrapper">
-            <p className="movies-card__caption">33 слова о дизайне</p>
-            <button className="movies-card__button"></button>
-          </div>
-          <span className="movies-card__duration">1ч42м</span>
-        </div>
-
-        <div className="movies-card__container">
-          <img
-            src={cardOne}
-            alt="карточка фильма"
-            className="movies-card__image"
-          />
-          <div className="movies-card__wrapper">
-            <p className="movies-card__caption">33 слова о дизайне</p>
-            <button className="movies-card__button"></button>
-          </div>
-          <span className="movies-card__duration">1ч42м</span>
-        </div>
-
-        <div className="movies-card__container">
-          <img
-            src={cardTwo}
-            alt="карточка фильма"
-            className="movies-card__image"
-          />
-          <div className="movies-card__wrapper">
-            <p className="movies-card__caption">33 слова о дизайне</p>
-            <button className="movies-card__button movies-card__button_active"></button>
-          </div>
-          <span className="movies-card__duration">1ч42м</span>
-        </div>
-
-        <div className="movies-card__container">
-          <img
-            src={cardThree}
-            alt="карточка фильма"
-            className="movies-card__image"
-          />
-          <div className="movies-card__wrapper">
-            <p className="movies-card__caption">33 слова о дизайне</p>
-            <button className="movies-card__button"></button>
-          </div>
-          <span className="movies-card__duration">1ч42м</span>
-        </div>
-
-        <div className="movies-card__container">
-          <img
-            src={cardFour}
-            alt="карточка фильма"
-            className="movies-card__image"
-          />
-          <div className="movies-card__wrapper">
-            <p className="movies-card__caption">33 слова о дизайне</p>
-            <button className="movies-card__button"></button>
-          </div>
-          <span className="movies-card__duration">1ч42м</span>
-        </div>
-      </div>
-      <button className="movies-card__button-preload hover-button">Ещё</button>
-    </section>
+      </article>
+    </li>
   );
 }
+
+
+

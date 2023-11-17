@@ -1,0 +1,18 @@
+.element__like-button{
+    align-self: flex-start;
+    padding: 0;
+    margin-top: 14px;
+    width: 16px;
+    height: 16px;
+    border: none;
+    background-color: transparent;
+    background-position: -6px -3px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: opacity .3s linear;
+    background-image: url(../../../images/save-non-active.svg);
+}
+
+.element__like-button_active {
+    background-image: url(../../../images/save-active.svg);
+}

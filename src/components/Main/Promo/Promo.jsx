@@ -1,4 +1,4 @@
-import React from "react";
+import { HashLink } from "react-router-hash-link";
 import "./Promo.css";
 
 export default function Promo() {
@@ -11,9 +11,7 @@ export default function Promo() {
         <p className="promo__text">
           Листайте ниже, чтобы узнать больше про этот проект и его создателя.
         </p>
-        <button className="promo__button hover-button" type="button">
-          Узнать больше
-        </button>
+        <HashLink smooth to='#aboutProject' button className="promo__button hover-button">Узнать больше</HashLink>
       </div>
       <div className="promo__image"></div>
     </section>

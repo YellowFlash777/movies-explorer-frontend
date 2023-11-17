@@ -21,17 +21,13 @@
   font-weight: 400;
   line-height: normal;
 }
-.not-found__button {
-  cursor: pointer;
+.not-found__link {
+  text-decoration: none;
+  display: block;
   margin: 0 auto 60px;
-  background: transparent;
-  border: 0;
-  padding: 0;
   color: #4285F4;
   text-align: center;
   font-size: 14px;
-  font-weight: 400;
-  line-height: normal;
 }
 
 @media screen and (max-width: 600px) {

@@ -8,24 +8,37 @@
   padding-left: 60px;
 }
 .auth__error-login {
-  margin-bottom: 160px;
+  margin-bottom: 10px;
 }
 .auth__subtitle-login {
   padding-left: 58px;
 }
 
+.auth__error-password {
+  margin-bottom: 167px;
+}
+
 @media screen and (max-width: 580px) {
+
   .login__subtitle {
     padding-left: 10px;
+  }
+  .auth__submit-login {
+    margin-top: 98px;
   }
   .login__title {
     text-align: center;
     max-width: 162px;
   }
+  .auth__error-login:nth-child(1) {
+    margin-bottom: 0;
+  }
   .auth__error-login {
-    margin-bottom: 249px;
+    margin-bottom: 0;
   }
   .auth__subtitle-login {
     padding-left: 8px;
   }
 }
+
+

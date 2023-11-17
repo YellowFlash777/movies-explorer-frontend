@@ -1,6 +1,7 @@
 .promo {
   display: flex;
   margin: 0 auto;
+  padding-top: 75px;
 }
 .promo__wrapper {
   display: flex;
@@ -31,9 +32,12 @@
 }
 
 .promo__button {
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
-  width: 131px;
-  height: 36px;
+  width: 128px;
+  min-height: 26px;
+  padding-top: 9px;
   margin: 0 auto 75px 70px;
   color: white;
   font-size: 12px;
@@ -61,7 +65,7 @@
     .promo__text {
     max-width: 260px;
     text-align: center;
-    margin: 22px auto 90px;
+    margin: 22px auto 91px;
   }
   .promo__button {
     max-width: 260px;
@@ -93,16 +97,14 @@
     width: 210px;
     height: 206px;
   }
-}
-
-@media screen and (max-width: 320px) {
-  .promo__text {
-    margin: 22px auto 80px;
+  .promo {
+  padding-top: 70px;
   }
-  .promo__title {
-  margin: 46px auto 0;
+  .promo__text {
+    margin: 22px auto 77px;
   }
   .promo__button {
-  margin: 0 auto 32px;
+    margin: 0 auto 33px;
   }
 }
+
